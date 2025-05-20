@@ -1,0 +1,27 @@
+# Ask how many questions to enter
+n = int(input("How many quiz questions do you want to enter? "))
+
+questions = []  # List to store questions and answers
+
+# Take input from user
+for i in range(n):
+    print("\nEnter question", i + 1)
+    q = input("Question: ")
+    a = input("Answer: ")
+    questions.append([q, a])  # Save as [question, answer]
+
+# Run the quiz
+score = 0
+print("\n--- Quiz Time ---")
+
+for i in range(n):
+    print("\nQ", i + 1, ":", questions[i][0])
+    user_ans = input("Your answer: ")
+    if user_ans.lower() == questions[i][1].lower():
+        print("Correct!")
+        score += 1
+    else:
+        print("Wrong! The correct answer is:", questions[i][1])
+
+# Final score
+print("\nYour total score is", score, "out of", n)
